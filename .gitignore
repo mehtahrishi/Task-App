@@ -1,0 +1,36 @@
+# Byte-compiled / cache files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+venv/
+env/
+.venv/
+.env/
+
+# Flask instance folder
+instance/
+
+# PyInstaller build folders
+dist/
+build/
+*.spec
+
+# VS Code / IDE configs
+.vscode/
+.idea/
+
+# Environment variables
+.env
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Python egg files
+*.egg-info/
+.eggs/

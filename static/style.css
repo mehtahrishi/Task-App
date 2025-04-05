@@ -1,0 +1,199 @@
+/* Base Reset and Fonts */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Light & Dark Theme Colors */
+:root {
+    --bg-color: #e0e0e0;
+    --card-bg: rgba(255, 255, 255, 0.25);
+    --text-color: #333;
+    --form-bg: rgba(255, 255, 255, 0.4);
+    --button-bg: #007BFF;
+    --button-text: white;
+    --glass-blur: 10px;
+}
+
+body.dark {
+    --bg-color: #121212;
+    --card-bg: rgba(30, 30, 30, 0.4);
+    --text-color: #f0f0f0;
+    --form-bg: rgba(40, 40, 40, 0.5);
+    --button-bg: #1e90ff;
+    --button-text: white;
+}
+
+/* Body */
+body {
+    background: var(--bg-color);
+    color: var(--text-color);
+    min-height: 100vh;
+    padding: 20px;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* Container */
+.container {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+}
+
+/* Header layout */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+/* Heading */
+h1 {
+    margin-bottom: 0;
+    text-align: left;
+    font-size: 28px;
+}
+
+/* Minimal toggle icon button */
+#theme-toggle {
+    background: none;
+    border: none;
+    font-size: 24px;
+    padding: 4px 8px;
+    cursor: pointer;
+    color: inherit;
+    transition: transform 0.2s ease;
+}
+
+#theme-toggle:hover {
+    transform: scale(1.2);
+}
+
+/* Form styling */
+form {
+    background: var(--form-bg);
+    border-radius: 16px;
+    padding: 20px;
+    margin-bottom: 20px;
+    backdrop-filter: blur(var(--glass-blur));
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+form input, form select, form button {
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    background-color: transparent;
+    font-size: 16px;
+    flex: 1;
+}
+
+form button {
+    background: var(--button-bg);
+    color: var(--button-text);
+    border: none;
+    cursor: pointer;
+}
+
+/* Task styling */
+.task {
+    background: var(--card-bg);
+    padding: 15px;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    backdrop-filter: blur(var(--glass-blur));
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.3s;
+}
+
+.task:hover {
+    transform: scale(1.01);
+}
+
+.task-title {
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.task-meta {
+    font-size: 14px;
+    color: gray;
+}
+
+.actions a {
+    text-decoration: none;
+    font-size: 20px;
+    margin-left: 10px;
+    color: inherit;
+    transition: 0.2s;
+}
+
+.actions a:hover {
+    transform: scale(1.2);
+}
+
+/* Responsive */
+@media screen and (max-width: 600px) {
+    form {
+        flex-direction: column;
+    }
+
+    .task {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .actions {
+        margin-top: 10px;
+    }
+
+    .header {
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+    }
+}
+/* Placeholder text color for light theme */
+form input::placeholder,
+form select::placeholder {
+    color: #666;
+    opacity: 1; /* Optional: ensures visibility */
+}
+
+/* Dark mode placeholder color */
+body.dark form input::placeholder,
+body.dark form select::placeholder {
+    color: #aaa;
+    opacity: 1;
+}
+/* Input text color for light mode */
+form input,
+form select {
+    color: #000;
+}
+
+/* Input text color for dark mode */
+body.dark form input,
+body.dark form select {
+    color: #fff;
+}
+form select {
+    background-color: transparent; /* Already added */
+    color: #000;
+}
+
+/* Dark mode */
+body.dark form select {
+    background-color: #2c2c2c;
+    color: #fff;
+}
