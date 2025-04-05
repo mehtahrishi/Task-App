@@ -6,12 +6,15 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-   
-
     <div class="container">
         <div class="header">
             <h1>📝 Task Manager</h1>
-            <button id="theme-toggle">🌙</button>
+            <div class="header-actions">
+                <button id="theme-toggle">🌙</button>
+                <form method="POST" action="{{ url_for('logout_view') }}">
+                    <button type="submit" class="logout-btn">Logout</button>
+                </form>
+            </div>
         </div>
         
 
@@ -29,7 +32,7 @@
                 <option value="In Progress">In Progress</option>
                 <option value="Done">Done</option>
             </select>
-            <button type="submit">Add Task</button>
+            <button type="submit">➕</button>
         </form>
 
         {% for task in tasks %}
@@ -43,27 +46,26 @@
                 </div>
             </div>
             <div class="actions">
-                <a class="toggle-done" href="/toggle_status/{{ loop.index0 }}">✔️</a>
-                <a href="/delete/{{ loop.index0 }}">🗑️</a>
+                <a class="toggle-done" href="/toggle_status/{{ task.id }}">✔️</a>
+                <a href="/delete/{{ task.id }}">🗑️</a>
             </div>
         </div>
         {% else %}
         <div class="task">
-            <div class="task-info">
-                No tasks yet. Add one above! 👆
-            </div>
+            <div class="task-info">No tasks yet. Add one above! 👆</div>
         </div>
         {% endfor %}
     </div>
+
     <script>
         const toggleBtn = document.getElementById('theme-toggle');
         const currentTheme = localStorage.getItem('theme');
-    
+
         if (currentTheme === 'dark') {
             document.body.classList.add('dark');
             toggleBtn.textContent = '🌞';
         }
-    
+
         toggleBtn.addEventListener('click', () => {
             document.body.classList.toggle('dark');
             if (document.body.classList.contains('dark')) {
@@ -75,6 +77,5 @@
             }
         });
     </script>
-    
 </body>
 </html>

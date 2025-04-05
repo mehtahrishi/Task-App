@@ -1,0 +1,129 @@
+/* ==== Reset & Font ==== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body.login-page {
+    background: url('/static/dark.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+body.register-page {
+    background: url('/static/light.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* ==== Glass Card ==== */
+.glass-card {
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 20px;
+    padding: 40px 30px;
+    width: 100%;
+    max-width: 350px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    color: #fff;
+    text-align: center;
+}
+
+/* ==== Form Elements ==== */
+.glass-card h2 {
+    margin-bottom: 20px;
+    font-size: 28px;
+    color: #fff;
+}
+
+.glass-card input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    font-size: 16px;
+    outline: none;
+    transition: 0.3s;
+}
+
+.glass-card input::placeholder {
+    color: #eee;
+}
+
+.glass-card input:focus {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.glass-card button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    background-color: #00aaff;
+    color: #fff;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.glass-card button:hover {
+    background-color: #008fcc;
+}
+
+/* ==== Register Link ==== */
+.glass-card p {
+    margin-top: 15px;
+    font-size: 14px;
+    color: #eee;
+}
+
+.glass-card a {
+    color: #00cfff;
+    text-decoration: none;
+}
+
+.glass-card a:hover {
+    text-decoration: underline;
+}
+
+/* ==== Responsive (Mobile Friendly) ==== */
+@media screen and (max-width: 480px) {
+    body {
+        align-items: flex-start;
+        padding-top: 60px;
+    }
+
+    .glass-card {
+        padding: 30px 20px;
+        max-width: 90%;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+    }
+
+    .glass-card h2 {
+        font-size: 22px;
+    }
+
+    .glass-card input,
+    .glass-card button {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .glass-card p {
+        font-size: 12px;
+    }
+}
