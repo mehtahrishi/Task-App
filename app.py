@@ -7,9 +7,9 @@ app = Flask(__name__)
 app.secret_key = "your_secret_key"
 
 # Neo4j connection
-uri = "neo4j+s://bc1b6ebb.databases.neo4j.io"
+uri = "neo4j+s://42cebae4.databases.neo4j.io"
 username = "neo4j"
-password = "ZpR7RK9Tl900OW4QHGrj0bfElE1cEDKSqDY4484DNJM"
+password = "TAfLqcza7kQSNOjy1GEx8iHoMFmqINv4riOR8vVYoN8"
 driver = GraphDatabase.driver(uri, auth=(username, password))
 
 # Flask-Login setup
